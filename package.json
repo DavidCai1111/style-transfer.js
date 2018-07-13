@@ -1,0 +1,27 @@
+{
+  "name": "style-transfer-js",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/standard",
+    "model": "git clone https://github.com/DavidCai1993/vgg19-tensorflowjs-model.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidCai1993/style-transfer.js.git"
+  },
+  "author": "DavidCai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidCai1993/style-transfer.js/issues"
+  },
+  "homepage": "https://github.com/DavidCai1993/style-transfer.js#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.12.1",
+    "@tensorflow/tfjs-node": "^0.1.8"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
