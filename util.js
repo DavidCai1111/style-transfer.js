@@ -2,8 +2,11 @@
 const tf = require('@tensorflow/tfjs')
 const jimp = require('jimp')
 
-function loadImage (path) {
-  const img = jimp.read(path).resize(224, 224)
+const MEANS = tf.tensor1d([123.68, 116.779, 103.939]).reshape([1, 1, 1, 3])
+
+async function loadImage (path) {
+  const img = await jimp.read(path)
+  img.resize(224, 224)
 
   let r = []
   let g = []
@@ -16,6 +19,8 @@ function loadImage (path) {
   })
 
   return tf.tensor3d(r.concat(g).concat(b), [224, 224, 3])
+    .reshape([1, 224, 224, 3])
+    .sub(MEANS)
 }
 
 module.exports = { loadImage }
