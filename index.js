@@ -10,20 +10,29 @@ const { getLayerResult } = require('./lib/layer')
 
   const currentImage = await util.loadImage('./images/louvre.jpg')
   const styleImage = await util.loadImage('./images/monet_800600.jpg')
-  const noiseImage = util.generateNoiseImage(currentImage)
+  const outputImage = util.generateNoiseImage(currentImage)
 
-  console.log({ currentImage, styleImage })
+  function loss () {
+    const rawActivation = getLayerResult(vgg19, currentImage, 'block4_conv2')
+    const generatedActivation = getLayerResult(vgg19, outputImage, 'block4_conv2')
 
-  const generatedActivation = getLayerResult(vgg19, styleImage, 'block4_conv2')
-  const rawActivation = getLayerResult(vgg19, currentImage, 'block4_conv2')
+    const contentCost = cost.computeContentCost(rawActivation, generatedActivation)
+    const styleCost = cost.computeStyleCost(vgg19, styleImage, outputImage)
 
-  const contentCost = cost.computeContentCost(rawActivation, generatedActivation)
-  const styleCost = cost.computeStyleCost(vgg19, styleImage)
+    const totalCost = cost.computeTotalCost(contentCost, styleCost, 10, 40)
 
-  const totalCost = cost.computeTotalCost(contentCost, styleCost, 10, 40)
+    console.log({
+      contentCost: contentCost.dataSync(),
+      styleCost: styleCost.dataSync(),
+      totalCost: totalCost.dataSync()
+    })
 
-  console.log({ contentCost, styleCost, totalCost })
+    return totalCost
+  }
 
   const optimizer = tf.train.adam(2)
-  const trainStep = optimizer.minimize(totalCost)
+
+  for (let i = 0; i < 80; i++) {
+    optimizer.minimize(() => loss())
+  }
 })(console.error)
