@@ -10,8 +10,8 @@ tf.setBackend('tensorflow')
 ;(async function () {
   const vgg19 = await tf.loadModel(`file://${__dirname}/vgg19-tensorflowjs-model/model/model.json`)
 
-  const currentImage = await util.loadImage('./images/louvre.jpg')
-  const styleImage = await util.loadImage('./images/monet_800600.jpg')
+  const currentImage = await util.loadImage('./images/great-wall.jpg')
+  const styleImage = await util.loadImage('./images/Starry_Night.jpg')
 
   const rawActivation = getLayerResult(vgg19, currentImage, 'block4_conv2')
   let outputImage = util.generateNoiseImage(currentImage)
@@ -25,12 +25,6 @@ tf.setBackend('tensorflow')
     const styleCost = cost.computeStyleCost(vgg19, styleImage, outputImage)
     const totalCost = cost.computeTotalCost(contentCost, styleCost, 10, 40)
 
-    console.log({
-      contentCost: contentCost.dataSync(),
-      styleCost: styleCost.dataSync(),
-      totalCost: totalCost.dataSync()
-    })
-
     return totalCost
   }
 
@@ -38,9 +32,9 @@ tf.setBackend('tensorflow')
 
   for (let i = 0; i < 200; i++) {
     const start = Date.now()
-    console.log({ outputImage: outputImage.dataSync() })
     const cost = optimizer.minimize(() => loss(), true, [outputImage])
-    console.log({ outputImage: outputImage.dataSync() })
-    console.log(`cost: ${cost.dataSync()}, use ${(Date.now() - start) / 1000}s`)
+    console.log(`epoch: ${i + 1}, cost: ${cost.dataSync()}, use ${(Date.now() - start) / 1000}s`)
   }
+
+  util.saveImage('./out1.jpg', outputImage)
 })(console.error)
