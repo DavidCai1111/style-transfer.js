@@ -20,7 +20,7 @@
   "dependencies": {
     "@tensorflow/tfjs": "^0.12.1",
     "@tensorflow/tfjs-node": "^0.1.8",
-    "jimp": "^0.2.28"
+    "opencv4nodejs": "^4.7.0"
   },
   "devDependencies": {
     "standard": "^11.0.1"

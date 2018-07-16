@@ -63,3 +63,4 @@ typings/
 # tensorflow.js
 vgg19-tensorflowjs-model/
 test.js
+test.py
