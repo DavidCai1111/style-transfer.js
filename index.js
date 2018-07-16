@@ -30,11 +30,11 @@ tf.setBackend('tensorflow')
 
   const optimizer = tf.train.adam(2)
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 500; i++) {
     const start = Date.now()
     const cost = optimizer.minimize(() => loss(), true, [outputImage])
     console.log(`epoch: ${i + 1}, cost: ${cost.dataSync()}, use ${(Date.now() - start) / 1000}s`)
   }
 
-  util.saveImage('./out1.jpg', outputImage)
+  util.saveImage('./out.jpg', outputImage)
 })(console.error)
