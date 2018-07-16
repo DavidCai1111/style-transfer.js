@@ -1,9 +1,9 @@
 'use strict'
 require('@tensorflow/tfjs-node')
 const tf = require('@tensorflow/tfjs')
-const cost = require('./cost')
-const { loadImage } = require('./util')
-const { getLayerResult } = require('./layer')
+const cost = require('./lib/cost')
+const { loadImage } = require('./lib/util')
+const { getLayerResult } = require('./lib/layer')
 
 ;(async function () {
   const vgg19 = await tf.loadModel(`file://${__dirname}/vgg19-tensorflowjs-model/model/model.json`)
