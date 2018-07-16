@@ -23,4 +23,10 @@ async function loadImage (path) {
     .sub(MEANS)
 }
 
-module.exports = { loadImage }
+function generateNoiseImage (image, noiseRatio = 0.6) {
+  const noiseImage = tf.randomUniform([1, 400, 300, 3], -20, 20)
+
+  return noiseImage.mul(noiseRatio).add(image.mul(1 - noiseRatio))
+}
+
+module.exports = { loadImage, generateNoiseImage }

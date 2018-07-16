@@ -1,12 +1,13 @@
 'use stirct'
 const tf = require('@tensorflow/tfjs')
+const { getLayerResult } = require('./layer')
 
 const STYLE_LAYERS = [
-  ['conv1_1', 0.2],
-  ['conv2_1', 0.2],
-  ['conv3_1', 0.2],
-  ['conv4_1', 0.2],
-  ['conv5_1', 0.2]
+  ['block1_conv1', 0.2],
+  ['block2_conv1', 0.2],
+  ['block3_conv1', 0.2],
+  ['block4_conv1', 0.2],
+  ['block5_conv1', 0.2]
 ]
 
 function computeContentCost (rawContentActivation, generatedContentActivation) {
@@ -54,14 +55,13 @@ function computeLayerStyleCost (rawContentActivation, generatedContentActivation
   return layerStyleCost.asType('float32')
 }
 
-function computeStyleCost (model, session) {
+function computeStyleCost (model, input) {
   let styleCost = 0
 
   for (const [layerName, coeff] of STYLE_LAYERS) {
-    const out = model[layerName]
-    const activation = session.run(out)
-
-    const generatedActivation = out
+    const activation = getLayerResult(model, input, layerName)
+    console.log({ activation })
+    const generatedActivation = activation
 
     const layerCost = computeLayerStyleCost(activation, generatedActivation)
 

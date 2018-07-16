@@ -11,6 +11,13 @@ const { getLayerResult } = require('./layer')
   const currentImage = await loadImage('./images/louvre.jpg')
   const styleImage = await loadImage('./images/monet_800600.jpg')
 
-  const rawActivation = getLayerResult(vgg19, currentImage, 'block4_conv2')
+  console.log({ currentImage, styleImage })
+
   const generatedActivation = getLayerResult(vgg19, styleImage, 'block4_conv2')
+  const rawActivation = getLayerResult(vgg19, currentImage, 'block4_conv2')
+
+  const contentCost = cost.computeContentCost(rawActivation, generatedActivation)
+  const styleCost = cost.computeStyleCost(vgg19, styleImage)
+
+  console.log({ contentCost, styleCost })
 })(console.error)
