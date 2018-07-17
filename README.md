@@ -4,6 +4,8 @@
 
 Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tensorflow.org/).
 
+> For now, only support running under GPU.
+
 ## Some Examples
 
 ![example1.png](http://dn-cnode.qbox.me/Fn0CW_qNPdqyCNtmvV_2YbnYrm8a)
