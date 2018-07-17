@@ -7,7 +7,6 @@ Generate novel artistic images in Node.js.
 ## Some Examples
 
 ![example1.png](http://dn-cnode.qbox.me/Fr5rcQ0-dZGElXl9NBh3Q99cwUdw)
-![example2.png](http://dn-cnode.qbox.me/FmeTUIjBAkaICR4kevxXXdpvmTfy)
 
 ## How To Use It
 
