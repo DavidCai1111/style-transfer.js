@@ -1,7 +1,7 @@
 {
   "name": "style-transfer-js",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Generate novel artistic images in Node.js",
   "main": "transfer.js",
   "scripts": {
     "test": "./node_modules/.bin/standard",
