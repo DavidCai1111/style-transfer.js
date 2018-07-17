@@ -2,11 +2,12 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/DavidCai1993/style-transfer.js.svg?branch=master)](https://travis-ci.org/DavidCai1993/style-transfer.js)
 
-Generate novel artistic images in Node.js.
+Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tensorflow.org/).
 
 ## Some Examples
 
 ![example1.png](http://dn-cnode.qbox.me/Fr5rcQ0-dZGElXl9NBh3Q99cwUdw)
+![example2.png](http://dn-cnode.qbox.me/FkXkyqaNDf29qQqKL_o27luj8uWb)
 
 ## How To Use It
 
