@@ -33,7 +33,7 @@ npm install
 ### Start Making Some Great Art
 
 ```js
-node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o o<outputImagePath> [--gpu]
+node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o <outputImagePath> [--gpu]
 
 // Example: node ./transfer.js transfer -c ./images/chairs.jpg -s ./images/monet_800600.jpg -o output.jpg --gpu
 ```

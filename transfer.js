@@ -16,10 +16,7 @@ transfer
     ;(async function () {
       const { contentImagePath, styleImagePath, outputImagePath, gpu } = opts
 
-      if (gpu !== undefined) require('@tensorflow/tfjs-node-gpu')
-      else require('@tensorflow/tfjs-node')
-
-      await model.run(contentImagePath, styleImagePath, outputImagePath)
+      await model.run(contentImagePath, styleImagePath, outputImagePath, gpu)
     })(console.error)
   })
 
