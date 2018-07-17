@@ -2,7 +2,7 @@
   "name": "style-transfer-js",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "transfer.js",
   "scripts": {
     "test": "./node_modules/.bin/standard",
     "model": "git clone https://github.com/DavidCai1993/vgg19-tensorflowjs-model.git"
@@ -20,6 +20,7 @@
   "dependencies": {
     "@tensorflow/tfjs": "^0.12.1",
     "@tensorflow/tfjs-node": "^0.1.8",
+    "commander": "^2.16.0",
     "opencv4nodejs": "^4.7.0"
   },
   "devDependencies": {
