@@ -6,8 +6,8 @@ Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tens
 
 ## Some Examples
 
-![example1.png](http://dn-cnode.qbox.me/Fr5rcQ0-dZGElXl9NBh3Q99cwUdw)
-![example2.png](http://dn-cnode.qbox.me/FkXkyqaNDf29qQqKL_o27luj8uWb)
+![example1.png](http://dn-cnode.qbox.me/Fn0CW_qNPdqyCNtmvV_2YbnYrm8a)
+![example2.png](http://dn-cnode.qbox.me/Fp-YmDHQ794V2NT-hFOVJjM-SCWH)
 
 ## How To Use It
 
@@ -34,7 +34,7 @@ npm install
 ### Start Making Some Great Art
 
 ```js
-node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o <outputImagePath> [--gpu]
+node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o <outputImagePath>
 
-// Example: node ./transfer.js transfer -c ./images/chairs.jpg -s ./images/monet_800600.jpg -o output.jpg --gpu
+// Example: node ./transfer.js transfer -c ./images/chairs.jpg -s ./images/monet_800600.jpg -o output.jpg
 ```
