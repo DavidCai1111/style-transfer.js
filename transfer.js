@@ -1,5 +1,4 @@
 'use strict'
-require('@tensorflow/tfjs-node')
 const transfer = require('commander')
 const pkg = require('./package')
 const model = require('./lib/model')
