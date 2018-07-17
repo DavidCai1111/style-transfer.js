@@ -4,6 +4,10 @@
 
 Generate novel artistic images in Node.js.
 
+## Some Examples
+
+![example1.png](http://dn-cnode.qbox.me/Fr5rcQ0-dZGElXl9NBh3Q99cwUdw)
+
 ## How To Use It
 
 ### Clone This Repository
@@ -28,7 +32,8 @@ npm install
 
 ### Start Making Some Great Art
 
-```sh
-node ./transfer.js transfer <contentImagePath> <styleImagePath> <outputImagePath>
-// Example: node ./transfer.js transfer ./images/chairs.jpg ./images/Starry_Night.jpg ./out.jpg
+```js
+node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o o<outputImagePath> [--gpu]
+
+// Example: node ./transfer.js transfer -c ./images/chairs.jpg -s ./images/monet_800600.jpg -o output.jpg --gpu
 ```
