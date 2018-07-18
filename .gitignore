@@ -64,3 +64,4 @@ typings/
 vgg19-tensorflowjs-model/
 test.js
 test.py
+out*
