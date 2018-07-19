@@ -4,8 +4,6 @@
 
 Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tensorflow.org/).
 
-> For now, only support running under GPU. For how to enable GPU for TensorFlow computing, you can check [this repository](https://github.com/williamFalcon/tensorflow-gpu-install-ubuntu-16.04).
-
 ## Some Examples
 
 ![example.png](http://dn-cnode.qbox.me/FuGdXW7RE0zc4K_vR5OKflSsrejp)
@@ -35,7 +33,7 @@ npm install
 ### Start Making Some Great Art
 
 ```js
-node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o <outputImagePath>
+node ./transfer.js transfer -c <contentImagePath> -s <styleImagePath> -o <outputImagePath> [--gpu]
 
-// Example: node ./transfer.js transfer -c ./images/chairs.jpg -s ./images/monet_800600.jpg -o output.jpg
+// Example: node ./transfer.js transfer -c ./images/chairs.jpg -s ./images/monet_800600.jpg -o output.jpg --gpu
 ```

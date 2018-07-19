@@ -1,7 +1,6 @@
 'use strict'
 const transfer = require('commander')
 const pkg = require('./package')
-const model = require('./lib/model')
 
 transfer.version(pkg.version)
 
@@ -11,11 +10,15 @@ transfer
   .option('-c, --contentImagePath <path>', 'Path to the "content image"')
   .option('-s, --styleImagePath <path>', 'Path to the "style image"')
   .option('-o, --outputImagePath <path>', 'Path to the output image')
+  .option('-g, --gpu')
   .action(function (opts) {
     ;(async function () {
-      const { contentImagePath, styleImagePath, outputImagePath } = opts
+      const { contentImagePath, styleImagePath, outputImagePath, gpu } = opts
 
-      await model.run(contentImagePath, styleImagePath, outputImagePath)
+      if (gpu) require('@tensorflow/tfjs-node-gpu')
+      else require('@tensorflow/tfjs-node')
+
+      await require('./lib/model').run(contentImagePath, styleImagePath, outputImagePath)
     })(console.error)
   })
 

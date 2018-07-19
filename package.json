@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DavidCai1993/style-transfer.js#readme",
   "dependencies": {
     "@tensorflow/tfjs": "^0.12.1",
+    "@tensorflow/tfjs-node": "^0.1.9",
     "@tensorflow/tfjs-node-gpu": "^0.1.9",
     "commander": "^2.16.0",
     "jimp": "^0.2.28"
