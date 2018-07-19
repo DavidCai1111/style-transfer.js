@@ -4,7 +4,7 @@
 
 Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tensorflow.org/).
 
-> For now, only support running under GPU.
+> For now, only support running under GPU. For how to enable GPU for TensorFlow computing, you can check [this repository](https://github.com/williamFalcon/tensorflow-gpu-install-ubuntu-16.04).
 
 ## Some Examples
 
