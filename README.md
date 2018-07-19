@@ -8,8 +8,7 @@ Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tens
 
 ## Some Examples
 
-![example1.png](http://dn-cnode.qbox.me/Fn0CW_qNPdqyCNtmvV_2YbnYrm8a)
-![example2.png](http://dn-cnode.qbox.me/Fp-YmDHQ794V2NT-hFOVJjM-SCWH)
+![example.png](http://dn-cnode.qbox.me/FuGdXW7RE0zc4K_vR5OKflSsrejp)
 
 ## How To Use It
 
