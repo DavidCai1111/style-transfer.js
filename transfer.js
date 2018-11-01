@@ -19,7 +19,7 @@ transfer
       else require('@tensorflow/tfjs-node')
 
       await require('./lib/model').run(contentImagePath, styleImagePath, outputImagePath)
-    })(console.error)
+    })().catch(console.error)
   })
 
 transfer.parse(process.argv)
