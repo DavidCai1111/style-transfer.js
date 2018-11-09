@@ -6,7 +6,7 @@ Generate novel artistic images in Node.js, using [TensorFlow.js](https://js.tens
 
 ## Some Examples
 
-![example.png](http://dn-cnode.qbox.me/FuGdXW7RE0zc4K_vR5OKflSsrejp)
+![style-transfer.png](http://static.cnodejs.org/FuGdXW7RE0zc4K_vR5OKflSsrejp)
 
 ## How To Use It
 
